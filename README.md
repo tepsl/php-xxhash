@@ -6,9 +6,9 @@ A PHP extension to add support for the [xxHash](https://github.com/Cyan4973/xxHa
 [xxHash](https://github.com/Cyan4973/xxHash) is an Extremely fast Hash algorithm, running at RAM speed limits. 
 It successfully completes the [SMHasher](http://code.google.com/p/smhasher/wiki/SMHasher) test suite which evaluates collision, dispersion and randomness qualities of hash functions.
 
-## PHP7 Compatability
+## PHP5 Compatability
 
-Please note at the moment the master branch should be used for PHP 5.x and develop branch should be used for PHP 7.x
+Please note the master branch should be used only for PHP 7.x
 
 ## Installation Instructions
 
@@ -25,15 +25,16 @@ Don't forget to load the extension in via php.ini or the like.
 Upon installation and enabling the extension within php.ini the following two new functions will be available to you:
 
 ```
-string xxhash32(string $data);
-string xxhash64(string $data);
+int xxhash32(string $data);
+int xxhash64(string $data);
 ```
 
-In both cases a string will be returned, representing the digest (hash) of the $data input.
+In both cases a int will be returned, representing the digest (hash) of the $data input.
+Note that xxhash64 value is truncated to 32bit value in 32bit system.
 
 
 ## Credits
-* Original implementation of [php-xxhash](https://github.com/stuartherbert/php-xxhash) by Stuart Herbert.
+* Original implementation of [php-xxhash](https://github.com/Megasaxon/php-xxhash/) by Craig R.
 * [xxHash](https://github.com/Cyan4973/xxHash) by Yann Collet.
 
 ## Licence
