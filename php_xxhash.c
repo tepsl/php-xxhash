@@ -58,7 +58,7 @@ PHP_FUNCTION(xxhash64)
 	sum = (int)XXH64(arg, arg_len, 0);
 
 	// return the checksum
-	RETURN_STR(sum);
+	RETURN_LONG(sum);
 }
 
 const zend_function_entry xxhash_functions[] = {
